@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Code Input Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+	<style>
+		* {
+			box-sizing: border-box;
+			font-family: Arial, sans-serif;
+		}
+		
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+		
+		.form-group {
+			margin-bottom: 20px;
+		}
+		
+		label {
+			display: block;
+			margin-bottom: 10px;
+			font-weight: bold;
+		}
+		
+		input[type="text"], textarea {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			resize: none;
+		}
+		
+		@media screen and (max-width: 600px) {
+			.container {
+				padding: 10px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Code Input Form</h1>
+		<form method="post" action="/output">
+			<div class="form-group">
+				<label for="code">Code:</label>
+				<textarea id="code" name="code" rows="10" placeholder="Enter your code here"></textarea>
+			</div>
+			<input type="submit"></input>
+		</form>
+	</div>
+    <hr>
+    <h1>History</h1>
+    <% if(data.length >0){%>
+        <% data.forEach(data => {%>
+    <div>
+        <div class="card" style="width: 18rem;">
+      
+            <div class="card-body">
+           
+              <p class="card-text"><%= data.data %></p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+
+    </div>
+    <% })%>
+	<% } %>
+</body>
+</html>
